@@ -18,7 +18,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'docker build -t simplewebapp .'
+                sh 'docker build -t khatab24/simplewebapp .'
             }
         }
 
