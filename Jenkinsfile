@@ -18,15 +18,15 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'docker build -t simpleWebapp .'
+                sh 'docker build -t simplewebapp .'
             }
         }
 
         stage('Push') {
             steps {
                 script {
-                    sh 'docker push khatab24/simpleWebapp'
-                    sh 'docker rmi khatab24/simpleWebapp'
+                    sh 'docker push khatab24/simplewebapp'
+                    sh 'docker rmi khatab24/simplewebapp'
                 }
             }
         }
@@ -34,8 +34,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sh 'docker pull khatab24/simpleWebapp'
-                    sh 'docker run -d --name mywebsite -p 5000:80 khatab24/simpleWebapp'
+                    sh 'docker pull khatab24/simplewebapp'
+                    sh 'docker run -d --name mywebsite -p 5000:80 khatab24/simplewebapp'
                 }
             }
         }
